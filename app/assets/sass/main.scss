@@ -1,0 +1,87 @@
+.min-height-1\/2 {
+  min-height: 43vh;
+}
+.max-height {
+  max-height: calc(100vh - 2rem);
+}
+.task-content {
+  color: #263238;
+  padding-right: 2px;
+  pre {
+    white-space: pre-wrap;
+    background: #f7f9fa;
+    color: #263238;
+    padding: 10px 15px;
+    line-height: 1.6;
+    border-radius: 3px;
+  }
+  figure img {
+    max-height: 200px;
+    width: auto;
+  }
+  ul, ol {
+    list-style-type: disc;
+    padding: revert;
+    margin: auto;
+  }
+}
+
+*:focus {
+  outline: 0;
+}
+
+/** Custom Scroll bar */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ebebeb;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(184, 184, 184);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(184, 184, 184);
+}
+
+/** Scroll bar for mozilla */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(184, 184, 184) #ebebeb;
+}
+
+/** custom loading: <div class="lds-ring"><div></div><div></div><div></div><div></div></div> */
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid rgb(214, 214, 214);
+  border-color: rgb(214, 214, 214) transparent rgb(214, 214, 214) transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
