@@ -1,4 +1,4 @@
-# Sanbox App
+# Sanbox
 It is based on on 2 apps:
 * api
 * admin (TODO)
