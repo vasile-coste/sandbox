@@ -2,7 +2,7 @@
 It is based on on 3 sub apps:
 * api
 * admin (TODO)
-* Sandbox app
+* Sandbox app - you can write code to solve the task in 2 languates: `php` and `JavaScript`. Test the code by clicking run, save the solution by clicking save.
 
 ## `Sandbox app`
 <table style="padding:10px">
