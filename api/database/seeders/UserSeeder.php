@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
     {
         User::create([
             'name' => 'Admin',
-            'email' => 'vasile.coste@artgames.ro',
+            'email' => 'vali@test.ro',
             'password' => Hash::make('asdasd')
         ]);
     }
