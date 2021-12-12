@@ -1,5 +1,5 @@
 # Sanbox
-It is based on on 2 apps:
+It is based on on 3 sub apps:
 * api
 * admin (TODO)
 * Sandbox app
