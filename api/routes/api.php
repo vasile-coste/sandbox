@@ -33,8 +33,3 @@ Route::group(['prefix' => 't'], function () {
     Route::post('list', [TaskController::class, 'apiGetTasks'])->name('task.list');
 });
 
-// admin area
-Route::post('/login', [LoginController::class, 'apiLogin'])->name('api.login');
-Route::middleware(['auth'])->group(function () {
-
-});

@@ -38,10 +38,11 @@ class LoginController extends Controller
         }
 
         $user = User::where('email', $request->email)->first();
+        $credentials = $request->only('email', 'password');
 
-        if ($user) {
-            // TODO: check password
-            Auth::login($user);
+        if (Auth::attempt($credentials)) { //$user && Hash::check($request->password, $user->password)
+            //Auth::login($user);
+            // dd(Auth::check());
 
             return response()->json([
                 'type' => 'success',
@@ -52,15 +53,16 @@ class LoginController extends Controller
         return response()->json([
             'type' => 'error',
             'messages' => [
-                'Invalid email address.',
+                'Invalid login credentials.',
             ],
         ], 500);
 
         return $request->all();
     }
 
-    public function apiLogout(Request $request)
+    public function logout(Request $request)
     {
         Auth::logout();
+        return redirect('/login');
     }
 }

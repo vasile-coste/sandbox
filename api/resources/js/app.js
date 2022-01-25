@@ -10,7 +10,8 @@ Vue.use(Notifications);
 
 // Components
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('login', require('./components/login.vue').default);
+Vue.component('login', require('./components/Login.vue').default);
+Vue.component('nav-menu', require('./components/NavMenu.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

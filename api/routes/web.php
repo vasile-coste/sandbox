@@ -15,9 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', [LoginController::class, 'loginView'])->name('login');
+// show login view
+Route::get('/login', [LoginController::class, 'loginView'])->name('login');
+// make login
+Route::post('/login', [LoginController::class, 'apiLogin'])->name('api.login');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 //logged in area
 Route::middleware(['auth'])->group(function () {
-    Route::get('/home', [AdminController::class, 'homeView'])->name('home');
+    Route::get('/', [AdminController::class, 'homeView'])->name('home');
+    Route::get('/tasks', [AdminController::class, 'homeView'])->name('home');
 });

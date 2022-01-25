@@ -16,11 +16,19 @@
 </head>
 
 <body class="bg-white">
-    <div id="app" class="w-full flex flex-col">
-          <!-- vue notification -->
-          <notifications position="top right"></notifications>
-          <!-- content -->
+    <div id="app" class="min-h-full w-full flex flex-col">
+        <!-- vue notification -->
+        <notifications position="top right"></notifications>
+
+        <!-- navigation -->
+        @if(Auth::check())
+          <nav-menu current="{{Request::path()}}"></nav-menu>
+        @endif
+
+        <!-- content -->
+        <div class="w-full pt-2">
           @yield('content')
+        </div>
     </div>
 </body>
 

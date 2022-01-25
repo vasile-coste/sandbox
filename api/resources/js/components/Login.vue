@@ -1,18 +1,7 @@
 <template>
   <div class="w-screen h-screen flex justify-center items-center bg-gray-100">
     <div class="p-10 bg-white rounded flex justify-center items-center flex-col shadow-md">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="w-20 h-20 text-gray-600 mb-2"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
-          clip-rule="evenodd"
-        />
-      </svg>
+      <UserIcon class="w-20 h-20" />
       <p class="mb-5 text-3xl uppercase text-gray-600">Login</p>
       <input
         v-model="form.email"
@@ -45,7 +34,12 @@
 </template>
 
 <script>
+import UserIcon from "../icons/UserIcon.vue";
+
 export default {
+  components: {
+    UserIcon,
+  },
   data() {
     return {
       form: {
@@ -67,7 +61,7 @@ export default {
       }
 
       try {
-        const response = await axios.post("api/login", this.form);
+        const response = await axios.post("/login", this.form);
 
         this.$notify({
           type: response.data.type,
@@ -75,8 +69,8 @@ export default {
           text: response.data.message,
         });
         setTimeout(function () {
-          window.location.href = "/home";
-        }, 2000);
+          window.location.href = "/";
+        }, 500);
       } catch (error) {
         error.response.data.messages.forEach((message) => {
           this.$notify({
